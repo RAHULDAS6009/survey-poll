@@ -1,10 +1,12 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 
 const app: Express = express();
+const config = require("./config");
+const surveyRoutes = require("./routes/surveyRoute");
 
-app.get("/", (req: Request, res: Response) => {
-    res.send("hello from server")
-});
-app.listen(5000, () => {
-  console.log("sever is running ");
+app.use(express.json());
+app.use("/api/surveys", surveyRoutes);
+
+app.listen(config.PORT, () => {
+  console.log(`sever is running on PORT ${config.PORT}`);
 });

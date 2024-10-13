@@ -33,5 +33,5 @@ model Option {
   text       String
   votes      Int     @default(0)
   questionId Int
-  Question   Question @relation(feilds:[questionId],references:[id])
+  Question   Question @relation(fields:[questionId],references:[id])
 }
