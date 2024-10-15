@@ -16,7 +16,7 @@ class surveyModel {
 
   static async createSurvey(data: Prisma.SurveyCreateInput): Promise<Survey> {
     return await prisma.survey.create({
-      data,
+      data:data,
     });
   }
 

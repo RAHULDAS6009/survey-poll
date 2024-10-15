@@ -1,16 +1,10 @@
 const surveyController = require("../controllers/surveyController")
-console.log("hello from survey Routes");
 
 const express = require("express");
 const router = express.Router();
 
 // - `GET /surveys`: Fetch all surveys.
-console.log("hello from survey Routes 1");
-
 router.get('/', surveyController.getAllSurveys)
-console.log("hello from survey Routes 2");
-
-
 // - `POST /surveys`: Create a new survey.
 router.post("/", surveyController.createSurvey)
 // - `GET /surveys/:id`: Fetch a specific survey.
