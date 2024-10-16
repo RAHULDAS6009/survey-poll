@@ -9,14 +9,14 @@ class surveyModel {
   static async getSurveyById({ id }: { id: number }): Promise<Survey | null> {
     return await prisma.survey.findUnique({
       where: {
-        id,
+        id: id
       },
     });
   }
 
-static async createSurvey(data: Prisma.SurveyCreateInput): Promise<Survey> {
+  static async createSurvey(data: Prisma.SurveyCreateInput): Promise<Survey> {
     return await prisma.survey.create({
-      data:data,
+      data: data,
     });
   }
 
@@ -29,7 +29,7 @@ static async createSurvey(data: Prisma.SurveyCreateInput): Promise<Survey> {
   }): Promise<Survey> {
     return await prisma.survey.update({
       where: { id: id },
-      data,
+      data: data,
     });
   }
 
